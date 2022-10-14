@@ -15,11 +15,22 @@ router.get('/', function(req, res) {
   res.sendFile(path.resolve("./public/login.html"));
 });
 
-router.post('/session', function(req, res) {
-  const { email, password } = req.body;
+router.get('/test', function(req, res) {
+  return res.json({ message: "hi"})
+})
+
+router.post('/session', async function(req, res) {
+  console.log("in post route");
+  console.log("!!!!!!!!", req);
+  // const { email, password, msg } = req.body;
+  const email = await req.body.email;
+  const password = await req.body.email;
+  const msg = await req.body.msg
+
+  console.log("++++++++", email, "++++++++", password, '++++++', msg)
 
   if (email === user.email && password === user.password) {
-    res.json({ user })
+    return res.json({ user })
   } else {
     res.status(500).send('Please valid credentials.')
   }
