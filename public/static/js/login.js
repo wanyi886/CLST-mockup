@@ -14,7 +14,7 @@ async function handleSubmit(e) {
     
     const response = await fetch('/session', {
         method: 'POST',
-        headers: { "Content-Type": "application.json" }, 
+        headers: { "Content-Type": "application/json" }, 
         body: JSON.stringify({
             msg,
             email: formdata[0].value,

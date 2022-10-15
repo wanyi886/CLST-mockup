@@ -21,18 +21,15 @@ router.get('/test', function(req, res) {
 
 router.post('/session', async function(req, res) {
   console.log("in post route");
-  console.log("!!!!!!!!", req);
-  // const { email, password, msg } = req.body;
-  const email = await req.body.email;
-  const password = await req.body.email;
-  const msg = await req.body.msg
+  console.log("!!!!!!!!", req.body);
+  const { email, password, msg } = req.body;
 
   console.log("++++++++", email, "++++++++", password, '++++++', msg)
 
   if (email === user.email && password === user.password) {
     return res.json({ user })
   } else {
-    res.status(500).send('Please valid credentials.')
+    res.status(500).send('Please prodive valid credentials.')
   }
 
 
