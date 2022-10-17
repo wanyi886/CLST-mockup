@@ -8,24 +8,25 @@ async function handleSubmit(e) {
 
     const formdata = document.getElementsByTagName('input');
 
-    const msg = "hihihi"
     
-    const response = await fetch('/session', {
+    const response = await fetch('/api/session', {
         method: 'POST',
         headers: { "Content-Type": "application/json" }, 
         body: JSON.stringify({
-            msg,
+            
             email: formdata[0].value,
             password: formdata[1].value
         }),
     })
     
     const data = await response.json();
+    
     console.log("data", data)
 
     if (data.user) {
-        console.log("Login succeed")
+        console.log("Successfully logged in!")
         // redirect to another page
+        location.href = "./loggedIn"
     } 
 
 
