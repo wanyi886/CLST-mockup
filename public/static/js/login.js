@@ -7,8 +7,6 @@ async function handleSubmit(e) {
     e.preventDefault();
 
     const formdata = document.getElementsByTagName('input');
-    console.log("email", formdata[0].value)
-    console.log("pwd", formdata[1].value)
 
     const msg = "hihihi"
     
@@ -27,9 +25,8 @@ async function handleSubmit(e) {
 
     if (data.user) {
         console.log("Login succeed")
-    } else {
-        console.log("Login failed")
-    }
+        // redirect to another page
+    } 
 
 
 }

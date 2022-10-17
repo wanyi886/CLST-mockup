@@ -19,9 +19,8 @@ router.get('/test', function(req, res) {
   return res.json({ message: "hi"})
 })
 
-router.post('/session', async function(req, res) {
-  console.log("in post route");
-  console.log("!!!!!!!!", req.body);
+router.post('/api/session', async function(req, res) {
+  
   const { email, password, msg } = req.body;
 
   console.log("++++++++", email, "++++++++", password, '++++++', msg)
@@ -29,10 +28,10 @@ router.post('/session', async function(req, res) {
   if (email === user.email && password === user.password) {
     return res.json({ user })
   } else {
-    res.status(500).send('Please prodive valid credentials.')
+    res.status(200).send('Please prodive valid credentials.')
   }
 
-
+  // TODO: need to make the payload same with the original site.
 
 })
 
