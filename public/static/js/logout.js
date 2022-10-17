@@ -2,20 +2,16 @@
 const logoutBTN = document.getElementById('logout-btn');
 
 const handelClick = async () => {
-    console.log("lol")
+    
     const response = await fetch('/api/logout', {
-        method: "DELETE", // customer uses POST to log out user
+        method: "DELETE", 
+        // customer uses POST with empty object to log out user. Need to comment in below to use it
+        
         // headers: { "Content-Type": "application/json"},
-        // body: JSON.stringify({
-            
-        // })
+        // body: JSON.stringify({})
     });
-    console.log("hi");
-
 
     if (response.ok) {
-        console.log("in response if")
-        // sessionStorage.removeItem("userId");
         alert("Logout successfully!")
     }
     

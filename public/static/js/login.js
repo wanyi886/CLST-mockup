@@ -1,5 +1,6 @@
-const button = document.getElementsByTagName('button')[1]; 
+const button = document.getElementsByTagName('button')[0]; 
 // console.log("button", button)
+
 
 // button would be a collection of element, so we need to add index to access the element
 // const testbtn = document.getElementById('testbtn');
@@ -9,7 +10,15 @@ async function handleSubmit(e) {
 
     const formdata = document.getElementsByTagName('input');
 
-    
+    if (formdata[0].value === "") {
+        // create a div element with message
+    } else if (formdata[1].value === ""){
+        // create a div element with message
+    }
+
+    console.log("formdata[0]", formdata[0]);
+    console.log("formdata[1]", formdata[1])
+
     const response = await fetch('/api/session', {
         method: 'POST',
         headers: { "Content-Type": "application/json" }, 
