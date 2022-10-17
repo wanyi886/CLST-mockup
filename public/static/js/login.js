@@ -19,17 +19,20 @@ async function handleSubmit(e) {
         }),
     })
     
-    const data = await response.json();
+    try {
+        const data = await response.json();
+        console.log("data", data);
     
-    console.log("data", data)
+        if (data.user) {
+            console.log("Successfully logged in!")
+            // redirect to another page
+            location.href = "./loggedIn"
+        }
+    } catch (e) {
+        alert('Email/ Password did not match, please try again');
 
-    if (data.user) {
-        console.log("Successfully logged in!")
-        // redirect to another page
-        location.href = "./loggedIn"
-    } 
-
-
+    }
+    
 }
 
 // function hand
