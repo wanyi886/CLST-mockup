@@ -1,4 +1,5 @@
-const button = document.getElementsByTagName('button')[0]; 
+const button = document.getElementsByTagName('button')[1]; 
+console.log("button", button)
 
 // button would be a collection of element, so we need to add index to access the element
 const testbtn = document.getElementById('testbtn');
@@ -23,9 +24,9 @@ async function handleSubmit(e) {
         const data = await response.json();
         console.log("data", data);
     
-        if (data.user) {
+        if (data.userId) {
             console.log("Successfully logged in!")
-            // redirect to another page
+            
             location.href = "./loggedIn"
         }
     } catch (e) {
@@ -37,6 +38,6 @@ async function handleSubmit(e) {
 
 // function hand
 
-button.addEventListener('submit', handleSubmit);
+button.addEventListener('click', handleSubmit);
 
 testbtn.addEventListener('click', handleSubmit)

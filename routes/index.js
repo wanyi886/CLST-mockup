@@ -39,13 +39,14 @@ router.post('/api/session', async function(req, res, next) {
     
     // return res.json({ 
     //   message: "User loggedIn successfully.",
-    //   response: { token: token}
+    //   response: { token: token},
+      
     //  })
 
 
     // For testButton I created:
     return res.json({
-      user
+      userId: user.id
     })
     
 
