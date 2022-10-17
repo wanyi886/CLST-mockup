@@ -1,8 +1,8 @@
 const button = document.getElementsByTagName('button')[1]; 
-console.log("button", button)
+// console.log("button", button)
 
 // button would be a collection of element, so we need to add index to access the element
-const testbtn = document.getElementById('testbtn');
+// const testbtn = document.getElementById('testbtn');
 
 async function handleSubmit(e) {
     e.preventDefault();
@@ -25,7 +25,9 @@ async function handleSubmit(e) {
         console.log("data", data);
     
         if (data.userId) {
-            console.log("Successfully logged in!")
+
+
+            console.log("Successfully logged in!");
             
             location.href = "./loggedIn"
         }
@@ -40,4 +42,4 @@ async function handleSubmit(e) {
 
 button.addEventListener('click', handleSubmit);
 
-testbtn.addEventListener('click', handleSubmit)
+// testbtn.addEventListener('click', handleSubmit)
