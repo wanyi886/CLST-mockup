@@ -8,24 +8,36 @@ const button = document.getElementsByTagName('button')[0];
 async function handleSubmit(e) {
     e.preventDefault();
 
-    const formdata = document.getElementsByTagName('input');
+    const forminput = document.getElementsByTagName('input');
 
-    if (formdata[0].value === "") {
+    if (forminput[0].value === "") {
+        // create a p element with message
+        const emailVali = document.createElement("p");
+        const eMessage = document.createTextNode('Email is required for login !');
+        emailVali.appendChild(eMessage);
+        forminput[0].parentNode.parentNode.appendChild(emailVali)
+        
+
+    } 
+    
+    if (forminput[1].value === ""){
         // create a div element with message
-    } else if (formdata[1].value === ""){
-        // create a div element with message
+        const pwdVali = document.createElement("p");
+        const pwdMessage = document.createTextNode('Password is required for login !');
+        pwdVali.appendChild(pwdMessage);
+        forminput[1].parentNode.parentNode.appendChild(pwdVali)
     }
 
-    console.log("formdata[0]", formdata[0]);
-    console.log("formdata[1]", formdata[1])
+    console.log("forminput[0]", forminput[0]);
+    console.log("forminput[1]", forminput[1])
 
     const response = await fetch('/api/session', {
         method: 'POST',
         headers: { "Content-Type": "application/json" }, 
         body: JSON.stringify({
             
-            email: formdata[0].value,
-            password: formdata[1].value
+            email: forminput[0].value,
+            password: forminput[1].value
         }),
     })
     
