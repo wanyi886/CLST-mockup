@@ -1,0 +1,9 @@
+.noshow {
+    display: none
+}
+
+.show {
+    display: inline;
+    color: red;
+}
+

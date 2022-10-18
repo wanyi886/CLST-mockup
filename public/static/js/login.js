@@ -1,3 +1,4 @@
+
 const button = document.getElementsByTagName('button')[0]; 
 // console.log("button", button)
 
@@ -5,39 +6,46 @@ const button = document.getElementsByTagName('button')[0];
 // button would be a collection of element, so we need to add index to access the element
 // const testbtn = document.getElementById('testbtn');
 
+const form_input = document.getElementsByTagName('input');
+const email_input = form_input[0];
+const pwd_input = form_input[1];
+
+const emailmsg = 'Email is required for login !';
+const pwdmsg = 'Password is required for login !';
+
+const emailVali = document.createElement("p");
+emailVali.setAttribute('id', 'eMessage');
+emailVali.setAttribute('class', 'noshow')
+const eMessage = document.createTextNode(emailmsg);
+emailVali.appendChild(eMessage);
+email_input.parentNode.parentNode.appendChild(emailVali)
+
+const pwdVali = document.createElement("p");
+pwdVali.setAttribute('id', 'pwdMessage');
+pwdVali.setAttribute('class', 'noshow');
+const pwdMessage = document.createTextNode(pwdmsg);
+pwdVali.appendChild(pwdMessage);
+pwd_input.parentNode.parentNode.appendChild(pwdVali)
+
+
+
+
+
+
 async function handleSubmit(e) {
     e.preventDefault();
 
-    const forminput = document.getElementsByTagName('input');
+    document.getElementById('eMessage').className = email_input.value === "" ? 'show' : 'noshow';
+    document.getElementById('pwdMessage').className = pwd_input.value === "" ? 'show' : 'noshow';
 
-    if (forminput[0].value === "") {
-        // create a p element with message
-        const emailVali = document.createElement("p");
-        const eMessage = document.createTextNode('Email is required for login !');
-        emailVali.appendChild(eMessage);
-        forminput[0].parentNode.parentNode.appendChild(emailVali)
-        
-
-    } 
-    
-    if (forminput[1].value === ""){
-        // create a div element with message
-        const pwdVali = document.createElement("p");
-        const pwdMessage = document.createTextNode('Password is required for login !');
-        pwdVali.appendChild(pwdMessage);
-        forminput[1].parentNode.parentNode.appendChild(pwdVali)
-    }
-
-    console.log("forminput[0]", forminput[0]);
-    console.log("forminput[1]", forminput[1])
 
     const response = await fetch('/api/session', {
         method: 'POST',
         headers: { "Content-Type": "application/json" }, 
         body: JSON.stringify({
             
-            email: forminput[0].value,
-            password: forminput[1].value
+            email: email_input.value,
+            password: pwd_input.value
         }),
     })
     
@@ -46,8 +54,6 @@ async function handleSubmit(e) {
         console.log("data", data);
     
         if (data.userId) {
-
-
             console.log("Successfully logged in!");
             
             location.href = "./loggedIn"
