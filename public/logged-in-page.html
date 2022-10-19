@@ -7,9 +7,19 @@
     <title>Logged In</title>
 </head>
 <body>
-    <h1>Welcome! You are logged in!</h1>
+    <h1>Welcome, <span id="name"></span>!</h1>
+    <h2>You are logged In!</h2>
     <button id="logout-btn" type="button">Log Out</button>
     
 </body>
     <script src="./static/js/logout.js"></script>
+    <script>
+        const userName = document.cookie
+            .split(';')
+            .find((row) => row.startsWith(' userName='))
+            .split('=')[1];
+        console.log(userName);
+        const name = document.getElementById('name');
+        name.innerHTML = userName
+    </script>
 </html>

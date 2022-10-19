@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 
 // valid credentials for customer website:
 // const user = { id: 2, email: 'abhinash@getnada.com', password: 'Admin@123'}
-const user = { id: 1, email: 'theuser@qualys.com', password: 'abc123'}
+const user = { id: 1, name: 'testUser', email: 'theuser@qualys.com', password: 'abc123'}
 
 router.get('/', function(req, res) {
   res.sendFile(path.resolve("./public/login.html"));
@@ -25,7 +25,8 @@ router.post('/api/session', async function(req, res, next) {
 
   if (email === user.email && password === user.password) {
 
-    res.cookie("userId", user.id);
+    // res.cookie("userId", user.id);
+    res.cookie("userName",  user.name )
 
     return res.json({ 
       userId: user.id
@@ -49,7 +50,9 @@ router.post('/api/session', async function(req, res, next) {
     console.log("err here!", err)
     err.status = 401;
     err.title = 'Login Failed';
-    err.message = 'Email/ Password did not match, please try again'
+    err.errors = ['Email/ Password did not match, please try again']
+    err.message = 'Email/ Password did not match, please try again';
+    // return err;
     return next(err)
    
   }
@@ -57,7 +60,9 @@ router.post('/api/session', async function(req, res, next) {
 });
 
 router.delete('/api/logout', async function(req, res) {
-  res.clearCookie("userId")
+  // res.clearCookie("userId");
+  res.clearCookie("userName")
+
   res.json({ message: "Logout Successfully."})
   
 })
