@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logged In</title>
+</head>
+<body>
+    <h1>Welcome, <span id="name"></span>!</h1>
+    <h2>You are logged In!</h2>
+    <button id="logout-btn" type="button">Log Out</button>
+    
+</body>
+    <script src="./static/js/logout.js"></script>
+    <script>
+        const userName = document.cookie
+            .split(';')
+            .find((row) => row.startsWith(' userName='))
+            .split('=')[1];
+        
+        const name = document.getElementById('name');
+        name.innerHTML = userName
+    </script>
+</html>
