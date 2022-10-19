@@ -1,3 +1,5 @@
+const baseURLvar = "http://localhost:1004";
+
 (this["webpackJsonpclst-ui"] = this["webpackJsonpclst-ui"] || []).push([
     [0],
     {
@@ -204,7 +206,7 @@
                 p = Object(c.a)({
                     reducerPath: "chatApi",
                     baseQuery: Object(s.d)({
-                        baseUrl: "".concat("http://localhost:1004", "/api"),
+                        baseUrl: "".concat(baseURLvar, "/api"),
                         prepareHeaders: function (e) {
                             var t = sessionStorage.getItem("token");
                             return t && e.set("token", "".concat(t)), e;
@@ -1478,7 +1480,7 @@
                 return i;
             });
             var n = a(777),
-                r = a.n(n).a.create({ baseURL: "".concat("http://localhost:1004") });
+                r = a.n(n).a.create({ baseURL: "".concat(baseURLvar) });
             r.interceptors.request.use(function (e) {
                 var t = sessionStorage.getItem("token");
                 return (e.headers.token = t), e;
@@ -2673,7 +2675,7 @@
                 Re = Object(Le.a)({
                     reducerPath: "settingsApi",
                     baseQuery: Object(De.d)({
-                        baseUrl: "".concat("http://localhost:1004", "/api"),
+                        baseUrl: "".concat(baseURLvar, "/api"),
                         prepareHeaders: function (e) {
                             var t = sessionStorage.getItem("token");
                             return t && e.set("token", "".concat(t)), e;
@@ -3692,7 +3694,7 @@
                 Kt = Object(Le.a)({
                     reducerPath: "userApi",
                     baseQuery: Object(De.d)({
-                        baseUrl: "".concat("http://localhost:1004", "/api"),
+                        baseUrl: "".concat(baseURLvar, "/api"),
                         prepareHeaders: function (e) {
                             var t = sessionStorage.getItem("token");
                             return t && e.set("token", "".concat(t)), e;
@@ -5564,7 +5566,7 @@
                 Qn = Object(Le.a)({
                     reducerPath: "notificationsApi",
                     baseQuery: Object(De.d)({
-                        baseUrl: "".concat("http://localhost:1004", "/api"),
+                        baseUrl: "".concat(baseURLvar, "/api"),
                         prepareHeaders: function (e) {
                             var t = sessionStorage.getItem("token");
                             return t && e.set("token", "".concat(t)), e;
@@ -6470,7 +6472,7 @@
                 Rr = Object(Le.a)({
                     reducerPath: "fixedDateTermsApi",
                     baseQuery: Object(De.d)({
-                        baseUrl: "".concat("http://localhost:1004", "/api"),
+                        baseUrl: "".concat(baseURLvar, "/api"),
                         prepareHeaders: function (e) {
                             var t = sessionStorage.getItem("token");
                             return t && e.set("token", "".concat(t)), e;
@@ -6732,7 +6734,7 @@
                 Hr = Object(Le.a)({
                     reducerPath: "rfqApi",
                     baseQuery: Object(De.d)({
-                        baseUrl: "".concat("http://localhost:1004", "/api"),
+                        baseUrl: "".concat(baseURLvar, "/api"),
                         prepareHeaders: function (e) {
                             var t = sessionStorage.getItem("token");
                             return t && e.set("token", "".concat(t)), e;
@@ -6768,7 +6770,7 @@
                 Gr = Object(Le.a)({
                     reducerPath: "walletApi",
                     baseQuery: Object(De.d)({
-                        baseUrl: "".concat("http://localhost:1004", "/api"),
+                        baseUrl: "".concat(baseURLvar, "/api"),
                         prepareHeaders: function (e) {
                             var t = sessionStorage.getItem("token");
                             return t && e.set("token", "".concat(t)), e;
@@ -11605,7 +11607,7 @@
                 Zo = Object(Le.a)({
                     reducerPath: "tradeLogsApi",
                     baseQuery: Object(De.d)({
-                        baseUrl: "".concat("http://localhost:1004", "/api"),
+                        baseUrl: "".concat(baseURLvar, "/api"),
                         prepareHeaders: function (e) {
                             var t = sessionStorage.getItem("token");
                             return t && e.set("token", "".concat(t)), e;
@@ -18552,6 +18554,7 @@
                                                           id: "outlined-error-helper-text",
                                                           "data-cy": "email",
                                                           inputRef: re,
+
                                                           onChange: function (e) {
                                                               V(e.target.value), L(!1);
                                                           },
@@ -25869,7 +25872,7 @@
                 c,
                 s = a(13),
                 d = a(192),
-                u = "".concat("http://localhost:1004"),
+                u = "".concat(baseURLvar),
                 b = null,
                 p = null,
                 m = null,
@@ -28912,7 +28915,7 @@
                 b = Object(l.a)({
                     reducerPath: "adminApi",
                     baseQuery: Object(c.d)({
-                        baseUrl: "".concat("http://localhost:1004", "/api"),
+                        baseUrl: "".concat(baseURLvar, "/api"),
                         prepareHeaders: function (e) {
                             var t = new URLSearchParams(window.location.search),
                                 a = "";
@@ -30346,7 +30349,7 @@
                 p = Object(c.a)({
                     reducerPath: "companiesApi",
                     baseQuery: Object(s.d)({
-                        baseUrl: "".concat("http://localhost:1004", "/api"),
+                        baseUrl: "".concat(baseURLvar, "/api"),
                         prepareHeaders: function (e) {
                             var t = sessionStorage.getItem("token");
                             return t && e.set("token", "".concat(t)), e;
@@ -31343,7 +31346,7 @@
                 p = Object(l.a)({
                     reducerPath: "callMoneyApi",
                     baseQuery: Object(c.d)({
-                        baseUrl: "".concat("http://localhost:1004", "/api"),
+                        baseUrl: "".concat(baseURLvar, "/api"),
                         prepareHeaders: function (e) {
                             var t = sessionStorage.getItem("token");
                             return t && e.set("token", "".concat(t)), e;

@@ -59,7 +59,7 @@ router.post('/api/session', async function(req, res, next) {
 
 });
 
-router.delete('/api/logout', async function(req, res) {
+router.delete('/WTA-739-CLST-login/api/logout', async function(req, res) {
   // res.clearCookie("userId");
   res.clearCookie("userName")
 
