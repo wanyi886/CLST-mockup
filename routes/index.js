@@ -52,8 +52,7 @@ router.post('/api/session', async function(req, res, next) {
 
   } else {
     const err = new Error('Login failed');
-    console.log("err here!", err)
-    err.status = 401;
+    err.status = 400;
     err.title = 'Login Failed';
     // err.errors = ['Email/ Password did not match, please try again']
     err.message = 'Email/ Password did not match the record, please try again.';

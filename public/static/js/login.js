@@ -31,7 +31,7 @@ async function fetchUser() {
     }
 }
 
-async function handleSubmit(e) {
+async function handleClick(e) {
     e.preventDefault();
 
     document.getElementById('eMessage').className = email_input.value === "" ? 'show' : 'noshow';
@@ -51,4 +51,4 @@ async function handleSubmit(e) {
 // function hand
 
 // button.addEventListener('submit', handleSubmit);
-button.addEventListener('click', handleSubmit);
+button.addEventListener('click', handleClick);
