@@ -18648,7 +18648,7 @@ const baseURLvar = "http://localhost:1004";
                                                 color: "primary",
                                                 size: "large",
                                                 disableElevation: !0,
-                                                type: "button",
+                                                type: "click",
                                                 disabled: !!u,
                                                 "data-cy": "submit",
                                                 sx: { marginBottom: 1, marginTop: 4, "@media(max-height:700px)": { marginTop: 2 } },
@@ -28635,6 +28635,7 @@ const baseURLvar = "http://localhost:1004";
                                         children: ["We can not seem to find a page you", Object(d.jsx)("br", {}), " are looking for."],
                                     }),
                                     Object(d.jsx)(i.b, { to: "app/login", style: { textDecoration: "none" }, children: Object(d.jsx)(r.a, { variant: "contained", color: "primary", children: "Back to Home" }) }),
+                    
                                 ],
                             }),
                             Object(d.jsx)("div", { className: "notfound404", children: Object(d.jsx)("img", { src: o, alt: "page not found" }) }),

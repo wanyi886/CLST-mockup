@@ -21,17 +21,14 @@ async function fetchUser() {
         }),
     })
 
-    if (!response.ok) {
-        const message = `An error has occured: ${response.status}`
-        throw new Error(message);
-    }
-
     const data = await response.json();
 
-    if (data.userId) {
-        location.href = "./loggedIn"
+    if (!response.ok) {
+        alert(data.message)
+    } else {
+        location.href = "./loggedIn";
+        return data
     }
-    return data
 }
 
 async function handleSubmit(e) {
@@ -40,48 +37,18 @@ async function handleSubmit(e) {
     document.getElementById('eMessage').className = email_input.value === "" ? 'show' : 'noshow';
     document.getElementById('pwdMessage').className = pwd_input.value === "" ? 'show' : 'noshow';
 
-    
-    // try {
-    //     const response = await fetch('/api/session', {
-    //         method: 'POST',
-    //         headers: { "Content-Type": "application/json" }, 
-    //         body: JSON.stringify({
-                
-    //             email: email_input.value,
-    //             password: pwd_input.value
-    //         }),
-    //     })
-
-        
-    //     const data = await response.json();
-
-    //     if (data.userId) {
-    //         location.href = "./loggedIn"
-    //     }
-        
-      
-    // } catch (err) {
-    //     // console.log("hohohoho");
-    //     console.error(err.status)
-    //     console.error(err.title);
-    //     console.log(err)
-    //     console.log("what the hell")
-    //     alert('hihihi')
-    //     // alert('Email/ Password did not match, please try again');
-
-    // }
-
-    fetchUser().catch(error => {
-        console.log(error.message)
-        console.error(message);
-    })
-
-    // alert would show up after refresh
+    fetchUser();
     // fetch() doesn't throw an error when the server returns a bad HTTP status, e.g. client (400–499) or server errors (500–599).
+    // so the code below is not working
+    // fetchUser().catch(error => {
+    //     // console.log(error.message)
+    //     // console.error(error.message);
+    //     alert(error.message)
+    // })
+
 }
 
 // function hand
 
+// button.addEventListener('submit', handleSubmit);
 button.addEventListener('click', handleSubmit);
-
-// testbtn.addEventListener('click', handleSubmit)
