@@ -49,7 +49,6 @@ router.post('/api/session', async function(req, res, next) {
     //   response: { token: token},
     //  })
 
-
   } else {
     const err = new Error('Login failed');
     err.status = 400;
