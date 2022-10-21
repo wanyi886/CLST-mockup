@@ -43,9 +43,10 @@ async function fetchUser() {
 async function handleClick(e) {
     // e.preventDefault();
     
+    fetchUser()
 
-    const eMessage_ptag = document.getElementById('eMessage');
-    const pwdMessage_ptag = document.getElementById('pwdMessage');
+    // const eMessage_ptag = document.getElementById('eMessage');
+    // const pwdMessage_ptag = document.getElementById('pwdMessage');
     
 
     // eMessage_ptag.className = email_input.value === "" ? 'show' : 'noshow';
@@ -59,7 +60,7 @@ async function handleClick(e) {
         
     // }
 
-    fetchUser()
+    
 
     //  if (email_input.value !== "" && pwd_input.value !== "") {
     //     fetchUser();
@@ -80,17 +81,17 @@ async function handleClick(e) {
 
 }
 
-const handleEmailChange = () => {
-    const eMessage_ptag = document.getElementById('eMessage');
+// const handleEmailChange = () => {
+//     const eMessage_ptag = document.getElementById('eMessage');
     
-    eMessage_ptag.className = eMessage.className = email_input.value === "" ? 'show' : 'noshow';
-}
+//     eMessage_ptag.className = eMessage.className = email_input.value === "" ? 'show' : 'noshow';
+// }
 
-const handlePWDChange = () => {
-    const pwdMessage_ptag = document.getElementById('pwdMessage');
-    pwdMessage_ptag.className = eMessage.className = pwd_input.value === "" ? 'show' : 'noshow';
+// const handlePWDChange = () => {
+//     const pwdMessage_ptag = document.getElementById('pwdMessage');
+//     pwdMessage_ptag.className = eMessage.className = pwd_input.value === "" ? 'show' : 'noshow';
 
-}
+// }
 
 // button.addEventListener('submit', handleClick);
 button.addEventListener('click', handleClick);
