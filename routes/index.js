@@ -66,7 +66,7 @@ router.delete('/api/logout', async function(req, res) {
   // res.clearCookie("userId");
   res.clearCookie("userName")
 
-  res.json({ message: "Logout Successfully."})
+  res.json({ message: "Logout Successfully! You will be redirected to login page."})
   
 })
 

@@ -12,7 +12,8 @@ const handelClick = async () => {
     });
 
     if (response.ok) {
-        alert("Logout successfully!")
+        const data = await response.json()
+        alert(data.message)
     }
     
     location.href= "./"
