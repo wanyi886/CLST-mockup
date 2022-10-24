@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Work sans","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #fff!important;
+}
+
+.noshow {
+    display: none
+}
+
+.show {
+    display: inline;
+    color: red;
+    font-family: "Work Sans";
+    margin: 4px 0px 0px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.43;
+}
+
+.container {
+    padding: 30px 20px 20px;
+    height: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin-top: 69px;
+    min-height: calc(100vh - 119px);
+}
+
+#h1 {
+    font-weight: 700;
+}
+#h2 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#name {
+    color:  rgb(48, 79, 254);
+    font-size: 35px;
+}
+
+#logout-btn {
+    font-family: -apple-system,BlinkMacSystemFont,"Work sans","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0px;
+    margin: 32px 0px 8px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    font-family: "Work Sans";
+    min-width: 64px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    width: 100%;
+    border-radius: 8px;
+    line-height: 19px;
+    text-transform: capitalize;
+    box-shadow: none;
+    border: none;
+    background-color: rgb(48, 79, 254);
+    color: rgb(255, 255, 255);
+    height: 56px;
+    font-weight: 500;
+    font-size: 22px;
+    padding: 11px 16px 12px;
+}
+
+
+

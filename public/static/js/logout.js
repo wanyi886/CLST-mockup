@@ -3,7 +3,7 @@ const logoutBTN = document.getElementById('logout-btn');
 
 const handelClick = async () => {
     
-    const response = await fetch('/WTA-739-CLST-login/api/logout', {
+    const response = await fetch('/api/logout', {
         method: "DELETE", 
         // customer uses POST with empty object to log out user. Need to comment in below to use it
         
@@ -12,7 +12,8 @@ const handelClick = async () => {
     });
 
     if (response.ok) {
-        alert("Logout successfully!")
+        const data = await response.json()
+        alert(data.message)
     }
     
     location.href= "./"

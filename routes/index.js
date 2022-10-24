@@ -11,6 +11,11 @@ router.get('/', function(req, res) {
   res.sendFile(path.resolve("./public/login.html"));
 });
 
+// router.get('/', function(req, res) {
+//   res.sendFile(path.join(__dirname, "/public/login.html"));
+// });
+
+
 router.get('/loggedIn', function(req, res) {
   res.sendFile(path.resolve("./public/logged-in-page.html"))
 })
@@ -44,26 +49,24 @@ router.post('/api/session', async function(req, res, next) {
     //   response: { token: token},
     //  })
 
-
   } else {
     const err = new Error('Login failed');
-    console.log("err here!", err)
-    err.status = 401;
+    err.status = 400;
     err.title = 'Login Failed';
-    err.errors = ['Email/ Password did not match, please try again']
-    err.message = 'Email/ Password did not match, please try again';
-    // return err;
+    // err.errors = ['Email/ Password did not match, please try again']
+    err.message = 'Email/ Password did not match the record, please try again.';
+    
     return next(err)
-   
+    
   }
 
 });
 
-router.delete('/WTA-739-CLST-login/api/logout', async function(req, res) {
+router.delete('/api/logout', async function(req, res) {
   // res.clearCookie("userId");
   res.clearCookie("userName")
 
-  res.json({ message: "Logout Successfully."})
+  res.json({ message: "Logout Successfully! You will be redirected to login page."})
   
 })
 
