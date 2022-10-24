@@ -1,4 +1,6 @@
 const baseURLvar = "http://localhost:1004";
+// const baseURLvar = "http://10.11.101.65:1004";
+// const baseURLvar = "http://10.11.68.62:1004"
 
 (this["webpackJsonpclst-ui"] = this["webpackJsonpclst-ui"] || []).push([
     [0],

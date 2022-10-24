@@ -12,7 +12,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 
 // app.set('view engine', 'jade');
-// app.engine('html', require('ejs').renderFile);
+app.engine('html', require('ejs').renderFile);
 // app.set('view engine', 'html');
 
 app.use(logger('dev'));
@@ -24,7 +24,7 @@ console.log(__dirname)
 
 // trying:
 // app.use(express.static(__dirname));
-// app.use(express.static(__dirname + './WTA-739/public'));
+// app.use('/WTA-739', express.static(__dirname + './public'));
 
 
 app.use('/', indexRouter);

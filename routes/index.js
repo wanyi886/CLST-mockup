@@ -1,24 +1,22 @@
 var express = require('express');
 var router = express.Router();
 var path = require('path');
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 
 // valid credentials for customer website:
 // const user = { id: 2, email: 'abhinash@getnada.com', password: 'Admin@123'}
 const user = { id: 1, name: 'testUser', email: 'theuser@qualys.com', password: 'abc123'}
 
+
 router.get('/', function(req, res) {
   res.sendFile(path.resolve("./public/login.html"));
 });
 
-// router.get('/', function(req, res) {
-//   res.sendFile(path.join(__dirname, "/public/login.html"));
-// });
-
 
 router.get('/loggedIn', function(req, res) {
   res.sendFile(path.resolve("./public/logged-in-page.html"))
-})
+});
+
 
 router.get('/test', function(req, res) {
   return res.json({ message: "hi"})
