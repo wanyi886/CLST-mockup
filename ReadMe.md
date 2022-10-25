@@ -13,3 +13,24 @@ Newly created files:
 5. app.js
 6. all.css
 7. Dockerfile
+
+package.json copy:
+{
+  "name": "clst-app",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+  "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "^3.1.8",
+    "express": "~4.16.1",
+    "express-async-handler": "^1.2.0",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1",
+    "node-sessionstorage": "^1.0.0"
+  }
+}

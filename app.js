@@ -55,9 +55,10 @@ app.use((err, _req, res, _next) => {
 });
 
 
+const port = process.env.PORT || "1004";
 
-app.listen(process.env.PORT || "1004", function() {
-  console.log("listening on port 1004")
+app.listen(port, function() {
+  console.log(`listening on port ${port}`)
 })
 
 
